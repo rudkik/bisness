@@ -6,9 +6,17 @@ Swiper.use([Navigation, Pagination, Autoplay, EffectFade, Thumbs]);
 
     $(document).ready(function () {
 
-        $('.tab').click(function(){
-            $(this).addClass("active").siblings().removeClass('active');
-            $('.tab-block-' + $(this).data('section')).addClass('active').siblings().removeClass('active');
+        $('a[href^="#"]').bind('click.smoothscroll',function (e) {
+            e.preventDefault();
+
+            var target = this.hash,
+                $target = $(target);
+
+            $('html, body').stop().animate({
+                'scrollTop': $target.offset().top
+            }, 500, 'swing', function () {
+                window.location.hash = target;
+            });
         });
 
     });

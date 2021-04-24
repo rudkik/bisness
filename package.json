@@ -10,8 +10,8 @@
     "IE 10"
   ],
   "scripts": {
-    "watch": "../node_modules/.bin/webpack --mode development --watch",
-    "build": "../node_modules/.bin/webpack  --mode=production"
+    "watch": "node_modules/.bin/webpack --mode development --watch",
+    "build": "node_modules/.bin/webpack  --mode=production"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
@@ -30,6 +30,8 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
+    "jQuery": "^1.7.4",
+    "jquery": "^3.6.0",
     "swiper": "^6.2.0",
     "waypoints": "^4.0.1"
   }
