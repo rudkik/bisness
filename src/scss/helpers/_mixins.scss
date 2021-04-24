@@ -1,0 +1,32 @@
+@mixin transition($property: all, $duration: .3s, $timing: ease) {
+  transition-property: $property;
+  transition-duration: $duration;
+  transition-timing-function: $timing;
+}
+
+@mixin respond-to($point) {
+  @if $point == 320 {
+    @media only screen and (max-width: 767px) {
+      @content;
+    }
+  } @else if $point == 768 {
+    @media only screen and (max-width: 1314px) {
+      @content;
+    }
+  }
+}
+
+@keyframes pulsing {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    width: 20px;
+    height: 20px;
+  }
+  100% {
+    width: 24px;
+    height: 24px;
+    opacity: 0;
+  }
+}
